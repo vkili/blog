@@ -1,0 +1,56 @@
+# main links
+main:
+#   - title: "Quick-Start Guide"
+#     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "About"
+    url: https://vkili.github.io/blog/about
+  - title: "Recent Posts"
+    url: https://vkili.github.io/blog/
+  # - title: "Contact Me"
+  #   url: https://vkili.github.io/blog/contact
+  - title: "All Articles"
+    url: https://vkili.github.io/blog/all-articles
+
+posts:
+  - title: Reverse Engineering and Binary Exploitation 
+    children:
+      - title: "Reverse Engineering"
+        url: https://vkili.github.io/blog/binary%20exploitation/intro-to-reverse-engineering/
+      - title: "Patching Binaries"
+        url: https://vkili.github.io/blog/binary%20exploitation/intro-to-binary-patching/
+      - title: "Buffer Overflow"
+        url: https://vkili.github.io/blog/binary%20exploitation/buffer-overflow/
+      - title: "Buffer Overread"
+        url: https://vkili.github.io/blog/binary%20exploitation/buffer-overread/
+      - title: "Format String Vulnerabilities"
+        url: https://vkili.github.io/blog/binary%20exploitation/format-string-vulnerabilities/
+      - title: "Data Execution Prevention"
+        url: https://vkili.github.io/blog/binary%20exploitation/data-execution-prevention/
+      - title: "Attacking Dynamic Linking"
+        url: https://vkili.github.io/blog/binary%20exploitation/attacking-dynamic-linking/
+      - title: "Protecting Binaries"
+        url: https://vkili.github.io/blog/binary%20exploitation/protecting-binaries/
+
+  - title: Server-Side Request Forgery
+    children:
+      - title: "Intro"
+        url: https://vkili.github.io/blog/ssrf/intro-to-ssrf/
+      - title: "Exploitation"
+        url: https://vkili.github.io/blog/ssrf/exploiting-ssrf/
+      - title: "Protection Bypass"
+        url: https://vkili.github.io/blog/ssrf/bypassing-ssrf-protection/
+      - title: "Real-life SSRFs"
+        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/    
+  
+  - title: Bash Scripting
+    children:
+      - title: "Intro"
+        url: https://vkili.github.io/blog/bash%20scripting/bash-intro/
+      - title: "Variables And Conditionals"
+        url: https://vkili.github.io/blog/bash%20scripting/bash-variables-conditionals/
+      - title: "Test And Loops"
+        url: https://vkili.github.io/blog/bash%20scripting/bash-tests-loops/
+      - title: "Functions"
+        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/  
+      - title: "Additional Tips"
+        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/ 

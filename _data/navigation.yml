@@ -51,6 +51,6 @@ posts:
       - title: "Test And Loops"
         url: https://vkili.github.io/blog/bash%20scripting/bash-tests-loops/
       - title: "Functions"
-        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/  
+        url: https://vkili.github.io/blog/bash%20scripting/bash-functions/
       - title: "Additional Tips"
-        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/ 
+        url: https://vkili.github.io/blog/bash%20scripting/bash-tips/

@@ -60,7 +60,8 @@ You can also let users provide input arguments in a bash script. In bash syntax,
 Let's say we want our script to customize its welcome, so we allow our users to pass in their names as arguments. We will then print out a custom welcome for them:
 
 ```bash
-#!/bin/bashecho "Hello!"
+#!/bin/bash
+echo "Hello!"
 echo "Welcome to the script :) "
 echo $@
 ```

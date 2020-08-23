@@ -101,7 +101,7 @@ We can implement this with an `if` statement. In bash, the syntax of an `if`�
 ```bash
 if [ condition 1]
 then
-  # do if condition 1 is satisfied\
+  # do if condition 1 is satisfied
 elif [condition 2]
   # do if condition 2 is satisfied, and condition 1 is not satisfied
 else
@@ -117,10 +117,10 @@ BIRTHDATE=$(date -jf "%Y-%m-%d" $1 +%s)
 if [ $2 ]
 then
   NEW_DATE=$(date -jf "%Y-%m-%d" $2 +%s)
-  DIFF_IN_SECONDS=$(expr $NEW_DATE --- $BIRTHDATE)
+  DIFF_IN_SECONDS=$(expr $NEW_DATE - $BIRTHDATE)
 else
   NOW=$(date -jf "%a %b %d %T %Z %Y" "$(date)" +%s)
-  DIFF_IN_SECONDS=$(expr $NOW --- $BIRTHDATE)
+  DIFF_IN_SECONDS=$(expr $NOW - $BIRTHDATE)
 fi
   DIFF_IN_DAYS=$(expr $DIFF_IN_SECONDS / 86400)
 echo "You are $DIFF_IN_DAYS days old."

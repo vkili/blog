@@ -1,7 +1,7 @@
--
+---
 categories:
   - Bash Scripting
--
+---
 
 Writing functions to simplify your script.
 
@@ -242,7 +242,8 @@ case $MODE in
   years)
     UNIT=365
     ;;
-esacecho "Calculating Charlie's age..."
+esac
+echo "Calculating Charlie's age..."
 BIRTHDATE=$CHARLIE_BDAY
 time_difference()
 {

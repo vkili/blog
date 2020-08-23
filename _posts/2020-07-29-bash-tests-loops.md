@@ -55,9 +55,11 @@ We saved the file with the name "calculate_age.sh" and users can calculate their
 Where MODE refers to the unit used to calculate age with. It can be either days, weeks, months, or years. And NEW_DATE is optional. If NEW_DATE is provided, the program will calculate the difference in days between the two dates instead of using the current time. This gives users the ability to calculate how old they were in the past, and how old they will be in the future.
 
 ```bash
-$ ./calculate_age.sh days "2000--06--09" "2020--05--07"
-You are 7272 days old.$./calculate_age.sh weeks "2000-06-09" "2020-05-07"
-You are 1038 weeks old.$ ./calculate_age.sh months "2000-06-09" "2020-05-07"
+$ ./calculate_age.sh days "2000-06-09" "2020-05-07"
+You are 7272 days old.
+$./calculate_age.sh weeks "2000-06-09" "2020-05-07"
+You are 1038 weeks old.
+$ ./calculate_age.sh months "2000-06-09" "2020-05-07"
 You are 242 months old.
 ```
 
@@ -108,10 +110,10 @@ This block of code calculates and prints the age of the user in days on every NE
 Let's break it down a bit! In the first two lines, the "shift" command tells bash to discard the first two command-line arguments passed in.
 
 ```bash
-$ ./calculate_age.sh days "2000--06--09" "2020--05--07" "2020--05--08"
+$ ./calculate_age.sh days "2000-06-09" "2020-05-07" "2020-05-08"
 ```
 
-In this command, for example, `days` is `$1`, "2000--06--09" is `$2`, "2020--05--07" is `$3`, and "2020--05--08" is `$4`. After a "shift" command, "2000--06--09" becomes `$1`, "2020--05--07" becomes `$2`, and "2020--05--08" becomes `$3` .
+In this command, for example, `days` is `$1`, "2000-06-09" is `$2`, "2020-05-07" is `$3`, and "2020-05-08" is `$4`. After a "shift" command, "2000-06-09" becomes `$1`, "2020-05-07" becomes `$2`, and "2020-05-08" becomes `$3` .
 
 In short, after every "shift" command, the first remaining command-line argument is discarded. We can use therefore use shift to iterate through the command-line arguments. The first two lines remove the first two arguments: the MODE and the BIRTHDATE. What remains are the NEW_DATES.
 

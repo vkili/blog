@@ -19,13 +19,13 @@ Format specifiers in a format string are placeholders that will be replaced w
 
 For example, the following code snippet shows how printf() in C works. The statement will output different sentences, depending on what is contained in the variable name.
 
-```
+```c
 printf("Hello, my name is %s.", &name);
 ```
 
 If the variable name contains the string "Vickie", the printf() statement will output:
 
-```
+```c
 Hello, my name is Vickie.
 ```
 
@@ -42,7 +42,7 @@ And in addition to %s used in the example above, there are a number of differe
 
 According to the data format dictated by the format specifiers, format functions retrieve the data requested from the stack.
 
-```
+```c
 printf("A is the number %d, B is the string %s", A, &B);
 ```
 
@@ -66,7 +66,7 @@ For now, keep in mind that local variables and function arguments are stored on 
 
 So what happens when an attacker provides more format specifiers than there are function arguments to fill its place? When there are two format specifiers, but only one function argument to supply value, what would printf() do?
 
-```
+```c
 printf("A is the number %d, reading stack data: %x", A);
 ```
 
@@ -74,14 +74,15 @@ printf() will still attempt to retrieve two values from the stack. But since on
 
 So an attacker could simply provide the string below to read large amounts of data on the stack:
 
-```
+```c
 printf("%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x");\
 -> will print the next 20 items on the stack
 ```
 
 An attacker can even directly access the *i*th argument on the stack by using a special case format specifier:
 
-```printf("%10$x");\
+```c
+printf("%10$x");\
 -> will print the tenth element next on the stack
 ```
 
@@ -95,7 +96,7 @@ But how do you control the address accessed by %s? You'll need to place an addr
 
 And conveniently, the format string (which you fully control) is stored on the stack! So if you can plant the address on the format string and get %s to dereference it, you can essentially access data beyond the stack.
 
-```
+```c
 printf("\xef\xbe\xad\xde%x%x%x%s", A, B, C);
 ```
 
@@ -118,7 +119,7 @@ In printf(), %n is a special case format specifier. Instead of being replaced
 
 For example, the following code will store the integer 5 into the variable num_char.
 
-```
+```c
 int num_char; 
 printf("11111%n", &num_char);
 ```
@@ -127,16 +128,16 @@ With dummy output characters and width-controlling format specifiers, the attac
 
 The following is an example of a width-controlling format specifier, which will help attackers avoid extremely long exploit strings (And allow attackers to access arbitrary locations even if the buffer is not large enough for the number of padding characters needed).
 
-```
-int num_char;\
-printf("%10d%n", 0, &num_char);\
+```c
+int num_char;
+printf("%10d%n", 0, &num_char);
 -> will print "          0", num_char is 10
 ```
 
 And by using length modifiers, attackers are able to control the amount of data written with fine-grain control. For example, %n will write 4 bytes into the target address, and %hn will only write 2 bytes.
 
 ```
-printf("%10d%n", 0, &num_char); -> writes 4 bytes to &num_char\
+printf("%10d%n", 0, &num_char); -> writes 4 bytes to &num_char
 printf("%10d%hn", 0, &num_char); -> writes 2 bytes to &num_char
 ```
 
@@ -150,7 +151,7 @@ But values on the stack are not always an address. They might be integers, chara
 
 The exploit string would look something like this:
 
-```
+```c
 printf ("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s");
 ```
 
@@ -164,13 +165,13 @@ When using format functions, it is important to avoid using user input directly 
 
 In short, user input should go here:
 
-```
+```c
 printf("string: %s", USER_INPUT);
 ```
 
 And not here:
 
-```
+```c
 printf(USER_INPUT, A, B);
 ```
 

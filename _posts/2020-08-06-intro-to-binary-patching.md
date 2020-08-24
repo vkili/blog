@@ -5,7 +5,7 @@ categories:
 
 How To Patch Binaries For Hackers And Pen Testers.
 
-Last time, we talked about [how to reverse engineer a binary using Ghidra](https://vkili.github.io/blog/intro-to-reverse-engineering/).
+Last time, we talked about [how to reverse engineer a binary using Ghidra](https://vkili.github.io/blog/binary%20exploitation/intro-to-reverse-engineering/).
 
 But what if you wanted to make modifications to the binary itself?
 
@@ -51,17 +51,17 @@ ret - Pop return address from stack and jump to there
 
 When Ghidra analyzes a binary, it disassembles the machine language back to assembly language. You can see the assembly instructions in the listing view after you open the file in Ghidra:
 
-![](https://github.com/vkili/blog/raw/master/assets/images/binary-08.png)
+![](https://vkili.github.io/blog/assets/images/binary-08.png)
 
 
 To patch an instruction, right-click on the instruction you want to modify and go to "Patch Instruction". From there, you will see textboxes that you can type into.
 
-![](https://github.com/vkili/blog/raw/master/assets/images/binary-09.png)
+![](https://vkili.github.io/blog/assets/images/binary-09.png)
 
 
 Finally, you can modify the instruction directly in the listing view.
 
-![](https://github.com/vkili/blog/raw/master/assets/images/binary-10.png)
+![](https://vkili.github.io/blog/assets/images/binary-10.png)
 
 
 ## Saving The Patch
@@ -72,12 +72,12 @@ This is a workaround script that addresses some issues that Ghidra has had in sa
 
 To install this script, you can copy the "SavePatch.py" file in the repository into your Ghidra scripts directory. You can find the Ghidra scripts directory by going to the script manager on top of your Ghidra window.
 
-![](https://github.com/vkili/blog/raw/master/assets/images/binary-11.png)
+![](https://vkili.github.io/blog/assets/images/binary-11.png)
 
 
 Then, go to "Create New Script".
 
-![](https://github.com/vkili/blog/raw/master/assets/images/binary-12.png)
+![](https://vkili.github.io/blog/assets/images/binary-12.png)
 
 
 Select "Python" and click "OK". You should see the path of the Ghidra Scripts directory there. Move the SavePatch.py file to this directory.

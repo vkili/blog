@@ -16,11 +16,15 @@ First, before we jump into using Ghidra, here are a few command-line utilities t
 
 The “strings” command finds the printable strings in an object, binary or file.
 
-```strings <path to binary file>```
+```bash
+strings <path to binary file>
+```
 
 The “file” command will reveal the file type of the file you are analyzing.
 
-```file <path to binary file>```
+```bash
+file <path to binary file>
+```
 
 ## Getting Started With Ghidra
 Ghidra is a software reverse engineering framework created by the National Security Agency (NSA) of the USA. It includes a variety of tools that helps users analyze compiled code on a variety of platforms including Windows, macOS, and Linux. Its capabilities include disassembly, assembly, decompilation, and many others.
@@ -31,15 +35,21 @@ Today, we are going to go through the features that would be most useful for a b
 First, to install Ghidra, you’d have to download the files from Ghidra’s homepage [here](https://ghidra-sre.org/).
 Ghidra also requires a supported version of a Java Runtime and Development Kit on the PATH to run. So you also need to install it. On Linux systems, you can simply run:
 
-```apt install openjdk-11-jdk```
+```bash
+apt install openjdk-11-jdk
+```
 
 Then, you can either enter the path of the JDK directory when prompted during the first run of Ghidra, or you can add it directly to your PATH variable by running:
 
-```export PATH=<path of extracted JDK dir>/bin:$PATH```
+```bash
+export PATH=<path of extracted JDK dir>/bin:$PATH
+```
 
 Finally, you should be able to run Ghidra’s executable in the unzipped Ghidra directory by running:
 
-```./ghidraRun```
+```bash
+./ghidraRun
+```
 
 ### First look at a binary
 We can now start analyzing programs using Ghidra! To open a binary in Ghidra, you first create a new project by going to File > New project. Then go to File > Import file to import the binary file that you want to analyze.

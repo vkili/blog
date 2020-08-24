@@ -39,7 +39,7 @@ First of all, there is a large number of overlaps between the two Google search 
 
 In addition, after filtering out the duplicate results, a large number of the resulting links point to either *limited disclosure reports*, *reports that are unrelated to SSRF*, or *reports that are actually private*. Here are the Google search results from the two search terms:
 
-![](/assets/images/ssrf-09.png)
+![](https://github.com/vkili/blog/assets/images/ssrf-09.png)
 
 After filtering out all of the reports that would not be useful, I was left with a total of 76 publicly disclosed reports to go through. And now it's time to read through these reports!
 
@@ -54,7 +54,7 @@ When reading these reports, I mainly looked at a few things:
 
 I read each report and categorized them according to the above criteria. I also looked at the fixes implemented by the vendors, and if any bypasses were found after the initial fix. In addition, I went to each of the sites that were found vulnerable and tried to find further bypasses myself. Here's the actual state of my browser tabs for a week:
 
-![](/assets/images/ssrf-10.png)
+![](https://github.com/vkili/blog/assets/images/ssrf-10.png)
 
 
 ## Results and analysis
@@ -67,7 +67,7 @@ First, here is the breakdown of the 76 reports based on the feature that the SSR
 
 The "Admin configuration" category mostly consists of SSRFs caused by XXEs when the site allows the importing of settings as an XML file. Whereas the "Other" category includes features that take in a URL that is not for file upload/ proxy/ webhook purposes.
 
-![](/assets/images/ssrf-11.png)
+![](https://github.com/vkili/blog/assets/images/ssrf-11.png)
 
 As you can see, most SSRFs in these reports occur in file upload, proxy or webhook services. This is consistent with most documentation about SSRF vulnerabilities out there, and these features should be the first places you go to look for SSRF vulnerabilities.
 
@@ -77,7 +77,7 @@ Another interesting thing to note is the variety of file types that could be use
 
 I then looked at the SSRF protection implemented *before* the report was submitted. Was the report about an SSRF protection bypass? Or was it on an endpoint with no SSRF protection at all?
 
-![](/assets/images/ssrf-12.png)
+![](https://github.com/vkili/blog/assets/images/ssrf-12.png)
 
 Much to my surprise, most of these reports were about features that *completely lack SSRF protection*. And a lot of these reports were made to tech firms that usually handle security well, including Dropbox, Shopify, Slack, and Twitter.
 
@@ -99,7 +99,7 @@ For the other reports, the vendor did not disclose what kind of protection was p
 
 During the process of studying these reports, I retested most of these sites and tried to bypass the protection implemented after the report. I retested around 25 of these endpoints. Using the SSRF bypass techniques that I have learned in the past, I was able to find a bypass to one of the reports due to an incomplete fix. This vulnerability was then reported to the vendor and fixed.
 
-Here are some of the [techniques](/bypassing-ssrf-protection/) that I used.
+Here are some of the [techniques](https://vkili.github.io/blog/ssrf/bypassing-ssrf-protection/) that I used.
 
 In addition, I also found a few other bugs (not SSRFs) on the sites that I retested, mostly CSRFs and info leak issues.
 

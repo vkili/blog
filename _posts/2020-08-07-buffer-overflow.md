@@ -22,23 +22,23 @@ Buffer overflow refers to when a program writes data to a buffer, the data takes
 Before the buffer overflow happens, the memory allocation looks like this:
 
 ```
-<---------------------------> <------------------------------------>\
+<---------------------------> <------------------------------------>
          Buffer                     Other program data
 ```
 
 If the input size does not exceed the buffer, all is good:
 
 ```
-AAAAAAAAAA                    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\
-<---------------------------> <------------------------------------>\
+AAAAAAAAAA                    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+<---------------------------> <------------------------------------>
          Buffer                     Other program data
 ```
 
 But when the user input size exceeds the size of the buffer, user input could overwrite other potentially important program data:
 
 ```
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBB\
-<---------------------------> <------------------------------------>\
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+<---------------------------> <------------------------------------>
          Buffer                     Other program data
 ```
 
@@ -83,16 +83,16 @@ In order to overwrite the return address and redirect program flow, an attacker 
 Before buffer overflow occurs, the canary value is RANDOM NUMBER:
 
 ```
- (RAMDOM NUMBER) 0xDEADBEEF\
-<---------------------------> <-------------> <-------------------->\
+ (RAMDOM NUMBER) 0xDEADBEEF
+<---------------------------> <-------------> <-------------------->
          Buffer                  Canary         Return address
 ```
 
 After buffer overflow, the canary value is altered:
 
 ```
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA(ATTACKER CODE)\
-<---------------------------> <-------------> <-------------------->\
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA(ATTACKER CODE)
+<---------------------------> <-------------> <-------------------->
          Buffer                  Canary         Return address
 ```
 

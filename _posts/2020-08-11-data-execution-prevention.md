@@ -36,11 +36,11 @@ Each gadget executes a small part of the computation desired by the attacker, su
 Gadgets typically end in a "return" instruction. This allows attackers to return the program flow to the stack. The attacker can then redirect program flow to the next gadget.
 
 ```
-Attacker redirects program to gadget location\
--> gadget code performs small action\
--> returns to stack\
--> attacker redirects program to another gadget\
--> gadget performs small action\
+Attacker redirects program to gadget location
+-> gadget code performs small action
+-> returns to stack
+-> attacker redirects program to another gadget
+-> gadget performs small action
 -> returns to stack ... and so on
 ```
 
@@ -55,9 +55,9 @@ In this case, attackers can utilize a technique called a "stack pivot". During a
 For example, the attacker can create a fake stack at a location that she can write to, and store the ROP chain there (place the list of addresses of gadgets there). Then, she can utilize the overwrite on the real stack to point to a gadget that moves the stack pointer to the fake stack, kick-starting the ROP chain.
 
 ```
-Attacker can only overwrite a single address on stack\
--> attacker places the ROP chain on heap (fake stack)\
--> attacker uses one gadget to point stack pointer to fake stack\
+Attacker can only overwrite a single address on stack
+-> attacker places the ROP chain on heap (fake stack)
+-> attacker uses one gadget to point stack pointer to fake stack
 -> ROP chain starts at fake stack
 ```
 
@@ -74,11 +74,11 @@ For example, the C code system("/bin/sh") can be used to spawn an interactive 
 The anatomy of the attack becomes like this:
 
 ```
-Attacker has limited overwrite on stack\
--> The stack is non-executable, cannot use custom shellcode\
--> Attacker place the address of system() on stack\
--> Attacker places "/bin/sh" on stack as an argument for system()\
--> System executes system("/bin/sh")\
+Attacker has limited overwrite on stack
+-> The stack is non-executable, cannot use custom shellcode
+-> Attacker place the address of system() on stack
+-> Attacker places "/bin/sh" on stack as an argument for system()
+-> System executes system("/bin/sh")
 -> An interactive shell is spawned
 ```
 

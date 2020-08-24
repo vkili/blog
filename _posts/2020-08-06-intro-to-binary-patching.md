@@ -25,7 +25,9 @@ Ghidra is equipped with a disassembler that translates machine language into ass
 
 In assembly, instructions are generally formatted like so:
 
-```<operation> <list of arguments>```
+```
+<operation> <list of arguments>
+```
 
 Here are a few of the most commonly used instructions:
 

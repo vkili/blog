@@ -41,7 +41,7 @@ However, due to application requirements (fetching external resources), most SSR
 
 Make the server request a URL that you control that redirects to the blacklisted address. For example, you can host a file with the following content on your web server:
 
-```
+```php
 <?php header("location: http://127.0.0.1"); ?>
 ```
 

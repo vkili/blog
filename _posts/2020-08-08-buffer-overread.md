@@ -14,8 +14,8 @@ Today, let's talk about a class of vulnerabilities that is quite similar to buff
 A buffer overread is like a buffer overflow, except that it occurs during a read operation. While reading from a buffer, the program goes over the buffer boundary and reads adjacent memory.
 
 ```
-* Program is suppose to read til here * But reads til here...\
-<-------------------------------------><--------------------------->\
+* Program is suppose to read til here * But reads til here...
+<-------------------------------------><--------------------------->
      Buffer                                Other program data
 ```
 
@@ -43,8 +43,8 @@ An attacker could, therefore, leak information from the target machine by sendin
 2.  The victim server responds with the ten-byte payload, along with 990 bytes of data from adjacent memory locations.
 
 ```
-* Program reads payload_length (1000 bytes) from memory ......\
-<--------------------------------------><-------------------------->\
+* Program reads payload_length (1000 bytes) from memory ......
+<--------------------------------------><-------------------------->
   Payload (10 bytes)                      Other program data
 ```
 

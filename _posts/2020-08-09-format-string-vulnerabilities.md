@@ -136,7 +136,7 @@ printf("%10d%n", 0, &num_char);
 
 And by using length modifiers, attackers are able to control the amount of data written with fine-grain control. For example, %n will write 4 bytes into the target address, and %hn will only write 2 bytes.
 
-```
+```c
 printf("%10d%n", 0, &num_char); -> writes 4 bytes to &num_char
 printf("%10d%hn", 0, &num_char); -> writes 2 bytes to &num_char
 ```

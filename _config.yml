@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Vickie Li"
-  avatar           : "https://github.com/vkili/blog/raw/master/assets/images/profile_pic.png"
+  avatar           : "/assets/images/profile_pic.png"
   bio              : "Hiyo. I'm a security researcher focusing on web security. Welcome to my blog!"
   # location         : "Somewhere"
   email            :

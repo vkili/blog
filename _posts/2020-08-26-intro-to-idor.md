@@ -4,8 +4,6 @@ categories:
   - Info Leak
 ---
 
-## Intro to IDOR
-
 And how to cause a massive data breach.
 
 ![](https://vkili.github.io/blog/assets/images/idor-01.png)

@@ -54,3 +54,8 @@ posts:
         url: https://vkili.github.io/blog/bash%20scripting/bash-functions/
       - title: "Additional Tips"
         url: https://vkili.github.io/blog/bash%20scripting/bash-tips/
+
+    - title: Info Leak
+    children:
+      - title: "Intro to IDORs"
+        url: https://vkili.github.io/blog/info%leak/intro-to-idor/

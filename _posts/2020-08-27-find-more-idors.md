@@ -25,13 +25,13 @@ Additionally, it might be possible to leak random or hashed IDs via another API
 
 For example, once I found an API endpoint that allows users to retrieve detailed direct messages through a hashed conversation ID. The request kinda looks like this:
 
-```http
+```
 GET /api_v1/messages?conversation_id=SOME_RANDOM_ID
 ```
 
 This seems okay at first glance since the *conversation_id *is a long, random, alphanumeric sequence. But I later found that you can actually find a list of conversations for each user just by using their user ID!
 
-```http
+```
 GET /api_v1/messages?user_id=ANOTHER_USERS_ID
 ```
 
@@ -47,13 +47,13 @@ If no IDs are used in the application generated request, try adding it to the re
 
 For example, if this request displays all your direct messages:
 
-```http
+```
 GET /api_v1/messages
 ```
 
 What about this one? Would it display another user's messages instead?
 
-```http
+```
 GET /api_v1/messages?user_id=ANOTHER_USERS_ID
 ```
 
@@ -63,25 +63,25 @@ HPP vulnerabilities (supplying multiple values for the same parameter) can also 
 
 Although this seems to be rare and I've never seen it happen before, theoretically, it would look like this. If this request fails:
 
-```http
+```
 GET /api_v1/messages?user_id=ANOTHER_USERS_ID
 ```
 
 Try this:
 
-```http
+```
 GET /api_v1/messages?user_id=YOUR_USER_ID&user_id=ANOTHER_USERS_ID
 ```
 
 Or this:
 
-```http
+```
 GET /api_v1/messages?user_id=ANOTHER_USERS_ID&user_id=YOUR_USER_ID
 ```
 
 Or provide the parameters as a list:
 
-```http
+```
 GET /api_v1/messages?user_ids[]=YOUR_USER_ID&user_ids[]=ANOTHER_USERS_ID
 ```
 

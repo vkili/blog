@@ -59,3 +59,5 @@ posts:
     children:
       - title: "Intro to IDORs"
         url: https://vkili.github.io/blog/info%20leak/intro-to-idor/
+      - title: "Find more IDORs"
+        url: https://vkili.github.io/blog/info%20leak/find-more-idors/

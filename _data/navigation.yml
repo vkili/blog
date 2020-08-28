@@ -64,6 +64,6 @@ posts:
 
   - title: Insecure Deserialization
     children:
-      - title: "Intro to IDORs"
+      - title: "Hacking Java Deserialization"
         url: https://vkili.github.io/blog/insecure%20deserialization/java-deserialization/
 

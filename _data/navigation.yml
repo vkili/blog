@@ -68,4 +68,6 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/java-deserialization/
       - title: "PHP Deserialization"
         url: https://vkili.github.io/blog/insecure%20deserialization/exploiting-php-deserialization/
+      - title: "Real-life Deserialization"
+        url: https://vkili.github.io/blog/insecure%20deserialization/deserialization-in-the-wild/
 

@@ -4,7 +4,7 @@ categories:
   - Insecure Deserialization
 ---
 
-How PHP's unserialize() works, and why it leads to vulnerabilities
+How PHP's unserialize() works, and why it leads to vulnerabilities.
 
 ## PHP's unserialize() function
 

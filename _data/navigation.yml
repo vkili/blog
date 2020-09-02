@@ -70,6 +70,6 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/exploiting-php-deserialization/
       - title: "Real-life Deserialization"
         url: https://vkili.github.io/blog/insecure%20deserialization/deserialization-in-the-wild/
-      - title: "Real-life Deserialization"
+      - title: "Intro to unserialize()"
         url: https://vkili.github.io/blog/insecure%20deserialization/unserialize/
 

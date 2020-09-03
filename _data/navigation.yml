@@ -72,4 +72,6 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/deserialization-in-the-wild/
       - title: "Intro to unserialize()"
         url: https://vkili.github.io/blog/insecure%20deserialization/unserialize/
+      - title: "PHP Pop Chains"
+        url: https://vkili.github.io/blog/insecure%20deserialization/pop-chains/
 

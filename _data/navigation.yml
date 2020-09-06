@@ -74,6 +74,8 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/unserialize/
       - title: "PHP Pop Chains"
         url: https://vkili.github.io/blog/insecure%20deserialization/pop-chains/
+      - title: "PHP unserialize() Escalation"
+        url: https://vkili.github.io/blog/insecure%20deserialization/unserialize-exploits/
       - title: "PHP Type Juggling"
         url: https://vkili.github.io/blog/insecure%20deserialization/php-type-juggling/
 

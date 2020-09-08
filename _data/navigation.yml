@@ -78,4 +78,5 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/unserialize-exploits/
       - title: "PHP Type Juggling"
         url: https://vkili.github.io/blog/insecure%20deserialization/php-type-juggling/
-
+      - title: "PHP Magic Methods"
+        url: https://vkili.github.io/blog/insecure%20deserialization/magic-methods/

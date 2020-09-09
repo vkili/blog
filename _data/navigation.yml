@@ -80,3 +80,5 @@ posts:
         url: https://vkili.github.io/blog/insecure%20deserialization/php-type-juggling/
       - title: "PHP Magic Methods"
         url: https://vkili.github.io/blog/insecure%20deserialization/magic-methods/
+      - title: "PHP Phar Deserialization"
+        url: https://vkili.github.io/blog/insecure%20deserialization/php-phar/

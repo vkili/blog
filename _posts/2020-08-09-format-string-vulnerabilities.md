@@ -20,7 +20,7 @@ Format specifiers in a format string are placeholders that will be replaced w
 For example, the following code snippet shows how printf() in C works. The statement will output different sentences, depending on what is contained in the variable name.
 
 ```c
-printf("Hello, my name is %s.", &name);
+printf("Hello, my name is %s.", name);
 ```
 
 If the variable name contains the string "Vickie", the printf() statement will output:

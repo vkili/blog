@@ -34,7 +34,7 @@ Spoofing domain names this way can also help attackers lure victims to their sit
 
 ### Bypassing word filters
 
-Unicode can also be used to bypass profanity filters. When an email list or forum uses profanity filters and prevents users from using profanities like "*sshole", the filter can be easily bypassed by using lookalike Unicode characters, like "*sshōle".
+Unicode can also be used to bypass profanity filters. When an email list or forum uses profanity filters and prevents users from using profanities like "\*sshole", the filter can be easily bypassed by using lookalike Unicode characters, like "\*sshōle".
 
 ### Spoofing file extensions
 
@@ -46,7 +46,7 @@ For example, the string "harmless(U+202E)txt.exe" will appear on the screen as "
 
 Just what else could be done using the visual spoofing capabilities of Unicode? Quite a lot, as it turns out! Unicode can also be used to hide backdoors in scripts. Let's look at how attackers can use Unicode to make their manipulations of files (nearly) undetectable!
 
-There is a script in Linux systems that handles authentication: */etc/pam.d/common-auth*. And the file contains these lines:
+There is a script in Linux systems that handles authentication: \*/etc/pam.d/common-auth\*. And the file contains these lines:
 
 ```
 [...]
@@ -58,15 +58,15 @@ auth    required            pam_permit.so
 [...]
 ```
 
-The script first checks the user's password. Then if the password check fails, *pam_deny.so* is executed, making the authentication fail. Otherwise, *pam_permit.so* is executed, and the authentication will succeed.
+The script first checks the user's password. Then if the password check fails, \*pam_deny.so\* is executed, making the authentication fail. Otherwise, \*pam_permit.so\* is executed, and the authentication will succeed.
 
-So what can an attacker do if she gains temporary access to the system? First, she can copy the contents of *pam_permit.so* to a new file, "pam_deոy.so", whose filename looks like *pam_deny.so* visually.
+So what can an attacker do if she gains temporary access to the system? First, she can copy the contents of \*pam_permit.so\* to a new file, "pam_deոy.so", whose filename looks like \*pam_deny.so\* visually.
 
 ```bash
-cp /lib/*/security/pam_permit.so /lib/security/pam_deոy.so
+cp /lib/\*/security/pam_permit.so /lib/security/pam_deոy.so
 ```
 
-Then, she can modify */etc/pam.d/common-auth* to use the newly created "pam_deոy.so" should the password checking fail:
+Then, she can modify \*/etc/pam.d/common-auth\* to use the newly created "pam_deոy.so" should the password checking fail:
 
 ```
 [...]
@@ -80,9 +80,9 @@ auth    required            pam_permit.so
 
 Now, authentication will succeed regardless of the result of the password check, since both "pam_permit.so" and "pam_deոy.so" contain the script that makes authentication succeed.
 
-And since "n" and "ո" lookalike in many terminal fonts, */etc/pam.d/common-auth* will look very much like the original when viewed with cat, less or a text editor. Furthermore, the contents of the original *pam_deny.so* was not modified at all, and still contains the code that makes authentication fail.
+And since "n" and "ո" lookalike in many terminal fonts, \*/etc/pam.d/common-auth\* will look very much like the original when viewed with cat, less or a text editor. Furthermore, the contents of the original \*pam_deny.so\* was not modified at all, and still contains the code that makes authentication fail.
 
-This backdoor is therefore extremely difficult to detect even if the system administrator carefully inspects the contents of both */etc/pam.d/common-auth* and *pam_deny.so*.
+This backdoor is therefore extremely difficult to detect even if the system administrator carefully inspects the contents of both \*/etc/pam.d/common-auth\* and \*pam_deny.so\*.
 
 ## Tools
 

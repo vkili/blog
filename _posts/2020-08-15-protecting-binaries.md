@@ -13,11 +13,11 @@ Today, let's dive into the techniques used to protect modern binaries and how at
 
 ## Protection 1: Data Execution Prevention (DEP)
 
-We've delved into some exploitation techniques such as [buffer overflow](https://vkili.github.io/blog/binary%20exploitation/buffer-overflow/), [buffer overread](https://vkili.github.io/blog/binary%20exploitation/buffer-overread/), and [format string attacks](https://vkili.github.io/blog/binary%20exploitation/format-string-vulnerabilities/). These memory corruption bugs can lead to attackers injecting and executing their own code.
+We've delved into some exploitation techniques such as [buffer overflow](https://vickieli.dev/blog/binary%20exploitation/buffer-overflow/), [buffer overread](https://vickieli.dev/blog/binary%20exploitation/buffer-overread/), and [format string attacks](https://vickieli.dev/blog/binary%20exploitation/format-string-vulnerabilities/). These memory corruption bugs can lead to attackers injecting and executing their own code.
 
 These attacks rely on parts of the memory being both writable and executable. (So that the attacker can write their code into the memory region, and subsequently execute that code.) If there are no memory regions that satisfy these two conditions, this type of attack would fail.
 
-![](https://vkili.github.io/blog/assets/images/binary-16.png)
+![](https://vickieli.dev/blog/assets/images/binary-16.png)
 
 ### Protecting the system by rejecting code execution
 
@@ -33,7 +33,7 @@ Return Oriented Programming is an exploit technique that allows attackers to exe
 
 In ROP, the entry point of the attack is still some form of memory corruption: the attacker would need a way to hijack the program control flow. The attacker can then continue to redirect the program flow to use snippets of code already in the codebase (called "gadgets"). Chaining these gadgets together, the attacker can pretty much replicate the effects of custom shellcode.
 
-![](https://vkili.github.io/blog/assets/images/binary-17.png)
+![](https://vickieli.dev/blog/assets/images/binary-17.png)
 
 Each gadget executes a small part of the computation desired by the attacker, such as adding to a register or writing it into a register.
 
@@ -98,11 +98,11 @@ By randomizing the address layout between program runs, ASLR protects against at
 
 For example, let's say as an attacker you are trying to launch a Ret2libc attack. To do that, you'll need to know where the address for system() is.
 
-![](https://vkili.github.io/blog/assets/images/binary-18.png)
+![](https://vickieli.dev/blog/assets/images/binary-18.png)
 
 So you run the program and was able to locate the address of system() within libc: 0xdeadbeef. You construct your exploit based on the assumption that system() is located at 0xdeadbeef, and rerun the program. If ASLR is enabled, your exploit would fail the next program run. This is because the location of libc has changed since the last time you run the program.
 
-![](https://vkili.github.io/blog/assets/images/binary-19.png)
+![](https://vickieli.dev/blog/assets/images/binary-19.png)
 
 So, even if an attacker is able to redirect program flow, she'll have no idea where to redirect to......
 
@@ -122,11 +122,11 @@ One of the ways places that attackers can redirect program flow to another funct
 
 An attacker might also be able to build exploits by leaking the locations of important code in memory. If an attacker can leak the address of an important function (such as printf()), she can use that location to deduce the address of more useful functions (such as system()).
 
-![](https://vkili.github.io/blog/assets/images/binary-20.png)
+![](https://vickieli.dev/blog/assets/images/binary-20.png)
 
 This is because even in ASLR, not every memory address would be randomized, and each segment of memory will still have a predictable internal format. In shared libraries, for example, only the base location of the memory segment would be randomized. The offset of a particular function from the base address remains constant.
 
-![](https://vkili.github.io/blog/assets/images/binary-21.png)
+![](https://vickieli.dev/blog/assets/images/binary-21.png)
 
 So if an attacker can know where printf() is, she knows where system() is.
 

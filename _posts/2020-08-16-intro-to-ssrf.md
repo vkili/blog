@@ -6,7 +6,7 @@ categories:
 
 And how your firewall failed you.
 
-![](https://vkili.github.io/blog/assets/images/ssrf-01.png)
+![](https://vickieli.dev/blog/assets/images/ssrf-01.png)
 
 Successful cyberattacks often start at the "network perimeter".
 
@@ -26,7 +26,7 @@ https://public.example.com/proxy?url=google.com
 
 the web application would display the homepage of "google.com".
 
-![](https://vkili.github.io/blog/assets/images/ssrf-02.png)
+![](https://vickieli.dev/blog/assets/images/ssrf-02.png)
 
 Now let's say *admin_panel.example.com* is an internal server hosting a hidden admin panel.
 
@@ -38,12 +38,12 @@ https://public.example.com/proxy?url=admin_panel.example.com
 
 With no SSRF protection mechanism in place, the web application would display the admin panel back to the user, because the request is coming from *public.example.com*, a trusted machine on the network!
 
-![](https://vkili.github.io/blog/assets/images/ssrf-03.png)
+![](https://vickieli.dev/blog/assets/images/ssrf-03.png)
 
 
 Unauthorized requests that would normally be blocked by firewall controls (like fetching the admin panel from a non-company machine) is now allowed. This is because the protection that exists on the network perimeter --- between public-facing web servers and Internet machines --- does not exist between machines on the trusted network --- between *public.example.com* and *admin_panel.example.com*.
 
-![](https://vkili.github.io/blog/assets/images/ssrf-04.png)
+![](https://vickieli.dev/blog/assets/images/ssrf-04.png)
 
 Using the ability to "forge" requests from trusted servers, an attacker can now conduct all kinds of nasty shenanigans on the network. Depending on the permissions given to the vulnerable server, an attacker might be able to read sensitive files, make internal API calls and access internal services like hidden admin panels.
 

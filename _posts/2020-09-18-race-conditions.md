@@ -34,11 +34,11 @@ For example, let's say that two concurrent threads of execution are each trying 
 
 Ideally, the threads would be executed as such:
 
-![](https://vkili.github.io/blog/assets/images/hacking-01.png)
+![](https://vickieli.dev/blog/assets/images/hacking-01.png)
 
 But, if the two threads are run simultaneously, without resource locks (a mechanism that blocks other threads from operating on the same resource) or synchronization (a mechanism that ensures that threads that utilize the same resources so not execute simultaneously), the execution could be scheduled like this:
 
-![](https://vkili.github.io/blog/assets/images/hacking-02.png)
+![](https://vickieli.dev/blog/assets/images/hacking-02.png)
 
 In this case, the final value of the global variable becomes 1, which is incorrect. (The expected value is 2.)
 
@@ -58,11 +58,11 @@ Let's say that you own two bank accounts, account A and account B. You have $50
 
 Ideally, when two money transfer requests were initiated, the program should behave like this.
 
-![](https://vkili.github.io/blog/assets/images/hacking-03.png)
+![](https://vickieli.dev/blog/assets/images/hacking-03.png)
 
 But if you can send the two request simultaneously, you might be able to induce a situation in which the execution of the threads become like this:
 
-![](https://vkili.github.io/blog/assets/images/hacking-04.png)
+![](https://vickieli.dev/blog/assets/images/hacking-04.png)
 
 Note that in this scenario, you end up with more money than you started with! You essentially made an additional $500 appear out of thin air by exploiting a race condition vulnerability.
 
@@ -88,7 +88,7 @@ The root cause of this attack is a race condition between these three actions:
 
 This is the breakdown of the race condition that caused the vulnerability:
 
-![](https://vkili.github.io/blog/assets/images/hacking-05.png)
+![](https://vickieli.dev/blog/assets/images/hacking-05.png)
 
 You can read more about the fun details of the exploit here.
 

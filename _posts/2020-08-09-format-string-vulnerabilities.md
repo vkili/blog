@@ -102,7 +102,7 @@ printf("\xef\xbe\xad\xde%x%x%x%s", A, B, C);
 
 For example, the above will cause printf() to print the string located at address 0xdeadbeef. The series of %x is used to traverse the stack to the location of the format string, and the number of %x needed will vary case by case. The %s tells printf() to treat the first four bytes of your format string as a pointer to the string to be printed.
 
-![](https://vkili.github.io/blog/assets/images/binary-13.png)
+![](https://vickieli.dev/blog/assets/images/binary-13.png)
 
 
 This infographic on the left shows what that stack looks like during the printf() function above.

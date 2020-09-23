@@ -7,7 +7,7 @@ And maximize their impact while hunting for bugs.
 
 I love IDORs. They are easy to find, simple to exploit and often carry significant business impact. They were the root causes of some of the most critical vulnerabilities that I've found.
 
-If you aren't familiar with IDORs or need a refresher, you can find an article explaining the basics of IDORs [here](https://vkili.github.io/blog/info%20leak/intro-to-idor/).
+If you aren't familiar with IDORs or need a refresher, you can find an article explaining the basics of IDORs [here](https://vickieli.dev/blog/info%20leak/intro-to-idor/).
 
 However, IDORs aren't always as simple as decrementing and switching out a numeric ID. As applications become more functionally complex, the way they reference resources often become more complex as well. This means that simple, numeric IDORs are becoming rarer in most web applications.
 

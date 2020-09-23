@@ -27,7 +27,7 @@ Defending against deserialization vulnerability is difficult. How to protect an 
 
 ## Why I did this
 
-Previously, I studied all the SSRF reports on HackerOne and found the experience to be extremely helpful. You can find the writeup [here](https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/).
+Previously, I studied all the SSRF reports on HackerOne and found the experience to be extremely helpful. You can find the writeup [here](https://vickieli.dev/blog/ssrf/ssrf-in-the-wild/).
 
 During the process of reading these reports, I gained a deeper understanding of the SSRF vulnerability class and was able to find a few bugs along the way.
 
@@ -49,7 +49,7 @@ site:hackerone.com inurl:/reports/ "serialization"site:hackerone.com inurl:/repo
 
 These three dorks yielded a total of 177 results at the time. These 177 links yielded 35 non-duplicate, relevant, real-world vulnerability reports. Others are either duplicate search results, CTF submissions, unexploitable issues, or vulnerabilities that are not actually caused by insecure deserialization.
 
-![](https://vkili.github.io/blog/assets/images/serialize-01.png)
+![](https://vickieli.dev/blog/assets/images/serialize-01.png)
 
 As you can tell, I was able to find a lot fewer reports than when I was searching for SSRFs. This was very much expected, and can be attributed to several factors:
 
@@ -78,7 +78,7 @@ Without further ado, here are the results I found from the publicly disclosed re
 
 For the majority of the reports, the hacker found the bug by analyzing source code directly. Some hackers looked at the code on the company's public Github repositories, while others obtained source code through other bugs like path traversal or SSRF.
 
-![](https://vkili.github.io/blog/assets/images/serialize-02.png)
+![](https://vickieli.dev/blog/assets/images/serialize-02.png)
 
 You can tell that source code review is still the most reliable way to detect deserialization vulnerabilities.
 
@@ -92,7 +92,7 @@ Features are potentially vulnerable to deserialization flaws if they deserialize
 
 For most of the reports, I was able to determine the vulnerable function handling the deserialization. Here's a breakdown of the functions that led to the vulnerability:
 
-![](https://vkili.github.io/blog/assets/images/serialize-03.png)
+![](https://vickieli.dev/blog/assets/images/serialize-03.png)
 
 Most of the disclosed vulnerabilities were caused by PHP's unserialize(). Followed by the unsafe deserialization of Java objects, Ruby's Marshall.load() then Python's pickle.loads(). For the rest of the reports, there was not enough information to determine what the vulnerable function was.
 
@@ -106,7 +106,7 @@ Although, this might not mean anything since I only looked at 35 reports, report
 
 I also looked at the worst-case exploitation scenario as proposed by the hacker. Of the 35 reports, 33 of them included an attack scenario that leads to RCE, while others pointed to DoS and authorization bypass. (Note that reports that were about insecure coding patterns without an exploitable vulnerability were excluded from this study.)
 
-![](https://vkili.github.io/blog/assets/images/serialize-04.png)
+![](https://vickieli.dev/blog/assets/images/serialize-04.png)
 
 Most hackers included PoCs to proof RCE to back up their claims in the report. As you can see most of the disclosed deserialization vulnerabilities lead to RCE. And even if a deserialization bug does not lead to RCE, it can likely lead to other severe consequences.
 
@@ -116,7 +116,7 @@ I was not able to gather information about *what can be done* after achieving 
 
 For this metric, I looked at two things: the final report state and the final severity rating.
 
-![](https://vkili.github.io/blog/assets/images/serialize-05.png)
+![](https://vickieli.dev/blog/assets/images/serialize-05.png)
 
 Of the 35 reports, only one was closed out as informative. All others resulted in a vendor fix and a "resolved" state.
 
@@ -124,7 +124,7 @@ The informative report was not closed as informative because the vulnerability w
 
 I also looked at the final severity rating of the report. A large number of the reports were not given a severity rating. For the rest, most were rated as critical. Four reports were closed as "high" and three were closed as "medium".
 
-![](https://vkili.github.io/blog/assets/images/serialize-06.png)
+![](https://vickieli.dev/blog/assets/images/serialize-06.png)
 
 These reports were given a lower severity rating because of several reasons and mitigating factors:
 

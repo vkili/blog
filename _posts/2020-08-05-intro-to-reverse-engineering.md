@@ -54,20 +54,20 @@ Finally, you should be able to run Ghidra’s executable in the unzipped Ghidra 
 ### First look at a binary
 We can now start analyzing programs using Ghidra! To open a binary in Ghidra, you first create a new project by going to File > New project. Then go to File > Import file to import the binary file that you want to analyze.
 
-![](https://vkili.github.io/blog/assets/images/binary-01.png)
+![](https://vickieli.dev/blog/assets/images/binary-01.png)
 
 After importing the file, you will see a window like this one:
 
-![](https://vkili.github.io/blog/assets/images/binary-02.png)
+![](https://vickieli.dev/blog/assets/images/binary-02.png)
 
 You will also be able to see some basic info about the program you are analyzing:
 
-![](https://vkili.github.io/blog/assets/images/binary-03.png)
+![](https://vickieli.dev/blog/assets/images/binary-03.png)
 
 ### A quick tour around Ghidra
 Double click on the file you want to analyze. This will open up a new window like this. This is the main window that we will be working with!
 
-![](https://vkili.github.io/blog/assets/images/binary-04.png)
+![](https://vickieli.dev/blog/assets/images/binary-04.png)
 
 Let’s go through the different views in this window!
 
@@ -77,13 +77,13 @@ The Listing view in the middle shows typical assembly code fields like addresses
 
 Whereas the decompiler on the right converts assembly back to C code. To do that, you can simply double click on the function that you want to analyze in the symbol tree view.
 
-![](https://vkili.github.io/blog/assets/images/binary-05.png)
+![](https://vickieli.dev/blog/assets/images/binary-05.png)
 
 ### Finding a function
 So how do we begin navigating around the binary and looking for individual functions? After all, we need to find interesting locations in the program to start our analysis!
 For example, how do we find the “main” function of a program? First, you can try to search for the function in the symbol tree view:
 
-![](https://vkili.github.io/blog/assets/images/binary-06.png)
+![](https://vickieli.dev/blog/assets/images/binary-06.png)
 
 But sometimes, the binary you are analyzing will not have symbols. This is called a “stripped binary”. What can you do to find the “main” function then?
 
@@ -94,7 +94,7 @@ This is because even when a binary is stripped and does not have symbols, it sti
 ### Editing the program during analysis 
 You can also edit the program during analysis in Ghidra. For example, you can edit a function by right-clicking on the function name in either the symbol tree, the listing window or the decompiler window, then going to the “Edit Function” option.
 
-![](https://vkili.github.io/blog/assets/images/binary-07.png)
+![](https://vickieli.dev/blog/assets/images/binary-07.png)
 
 You can also retype and rename variables by right-clicking on the variable names and then going to the “Retype Variable” or “Rename Variable” option.
 

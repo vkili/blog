@@ -32,7 +32,7 @@ But why does this happen? To create unpredictable parameter values, applications
 
 Every time that input is submitted, the function responds with the same output. For example, let's say the encryption function described below is used to encrypt a user's password file path as a defense against IDOR:
 
-![](https://vkili.github.io/blog/assets/images/encrypt-01.png)
+![](https://vickieli.dev/blog/assets/images/encrypt-01.png)
 
 The encryption function will return the same value for each unique input.
 

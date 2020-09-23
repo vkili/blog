@@ -3,82 +3,82 @@ main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
-    url: https://vkili.github.io/blog/about
+    url: https://vickieli.dev/blog/about
   - title: "Recent Posts"
-    url: https://vkili.github.io/blog/
+    url: https://vickieli.dev/blog/
   # - title: "Contact Me"
-  #   url: https://vkili.github.io/blog/contact
+  #   url: https://vickieli.dev/blog/contact
   - title: "All Articles"
-    url: https://vkili.github.io/blog/all-articles
+    url: https://vickieli.dev/blog/all-articles
 
 posts:
   - title: Reverse Engineering and Binary Exploitation 
     children:
       - title: "Reverse Engineering"
-        url: https://vkili.github.io/blog/binary%20exploitation/intro-to-reverse-engineering/
+        url: https://vickieli.dev/blog/binary%20exploitation/intro-to-reverse-engineering/
       - title: "Patching Binaries"
-        url: https://vkili.github.io/blog/binary%20exploitation/intro-to-binary-patching/
+        url: https://vickieli.dev/blog/binary%20exploitation/intro-to-binary-patching/
       - title: "Buffer Overflow"
-        url: https://vkili.github.io/blog/binary%20exploitation/buffer-overflow/
+        url: https://vickieli.dev/blog/binary%20exploitation/buffer-overflow/
       - title: "Buffer Overread"
-        url: https://vkili.github.io/blog/binary%20exploitation/buffer-overread/
+        url: https://vickieli.dev/blog/binary%20exploitation/buffer-overread/
       - title: "Format String Vulnerabilities"
-        url: https://vkili.github.io/blog/binary%20exploitation/format-string-vulnerabilities/
+        url: https://vickieli.dev/blog/binary%20exploitation/format-string-vulnerabilities/
       - title: "Data Execution Prevention"
-        url: https://vkili.github.io/blog/binary%20exploitation/data-execution-prevention/
+        url: https://vickieli.dev/blog/binary%20exploitation/data-execution-prevention/
       - title: "Attacking Dynamic Linking"
-        url: https://vkili.github.io/blog/binary%20exploitation/attacking-dynamic-linking/
+        url: https://vickieli.dev/blog/binary%20exploitation/attacking-dynamic-linking/
       - title: "Protecting Binaries"
-        url: https://vkili.github.io/blog/binary%20exploitation/protecting-binaries/
+        url: https://vickieli.dev/blog/binary%20exploitation/protecting-binaries/
 
   - title: Server-Side Request Forgery
     children:
       - title: "Intro"
-        url: https://vkili.github.io/blog/ssrf/intro-to-ssrf/
+        url: https://vickieli.dev/blog/ssrf/intro-to-ssrf/
       - title: "Exploitation"
-        url: https://vkili.github.io/blog/ssrf/exploiting-ssrf/
+        url: https://vickieli.dev/blog/ssrf/exploiting-ssrf/
       - title: "Protection Bypass"
-        url: https://vkili.github.io/blog/ssrf/bypassing-ssrf-protection/
+        url: https://vickieli.dev/blog/ssrf/bypassing-ssrf-protection/
       - title: "Real-life SSRFs"
-        url: https://vkili.github.io/blog/ssrf/ssrf-in-the-wild/    
+        url: https://vickieli.dev/blog/ssrf/ssrf-in-the-wild/    
   
   - title: Bash Scripting
     children:
       - title: "Intro"
-        url: https://vkili.github.io/blog/bash%20scripting/bash-intro/
+        url: https://vickieli.dev/blog/bash%20scripting/bash-intro/
       - title: "Variables And Conditionals"
-        url: https://vkili.github.io/blog/bash%20scripting/bash-variables-conditionals/
+        url: https://vickieli.dev/blog/bash%20scripting/bash-variables-conditionals/
       - title: "Test And Loops"
-        url: https://vkili.github.io/blog/bash%20scripting/bash-tests-loops/
+        url: https://vickieli.dev/blog/bash%20scripting/bash-tests-loops/
       - title: "Functions"
-        url: https://vkili.github.io/blog/bash%20scripting/bash-functions/
+        url: https://vickieli.dev/blog/bash%20scripting/bash-functions/
       - title: "Additional Tips"
-        url: https://vkili.github.io/blog/bash%20scripting/bash-tips/
+        url: https://vickieli.dev/blog/bash%20scripting/bash-tips/
 
   - title: Info Leak
     children:
       - title: "Intro to IDORs"
-        url: https://vkili.github.io/blog/info%20leak/intro-to-idor/
+        url: https://vickieli.dev/blog/info%20leak/intro-to-idor/
       - title: "Find more IDORs"
-        url: https://vkili.github.io/blog/info%20leak/find-more-idors/
+        url: https://vickieli.dev/blog/info%20leak/find-more-idors/
 
   - title: Insecure Deserialization
     children:
       - title: "Java Deserialization"
-        url: https://vkili.github.io/blog/insecure%20deserialization/java-deserialization/
+        url: https://vickieli.dev/blog/insecure%20deserialization/java-deserialization/
       - title: "PHP Deserialization"
-        url: https://vkili.github.io/blog/insecure%20deserialization/exploiting-php-deserialization/
+        url: https://vickieli.dev/blog/insecure%20deserialization/exploiting-php-deserialization/
       - title: "Real-life Deserialization"
-        url: https://vkili.github.io/blog/insecure%20deserialization/deserialization-in-the-wild/
+        url: https://vickieli.dev/blog/insecure%20deserialization/deserialization-in-the-wild/
       - title: "Intro to unserialize()"
-        url: https://vkili.github.io/blog/insecure%20deserialization/unserialize/
+        url: https://vickieli.dev/blog/insecure%20deserialization/unserialize/
       - title: "PHP Pop Chains"
-        url: https://vkili.github.io/blog/insecure%20deserialization/pop-chains/
+        url: https://vickieli.dev/blog/insecure%20deserialization/pop-chains/
       - title: "PHP unserialize() Escalation"
-        url: https://vkili.github.io/blog/insecure%20deserialization/unserialize-exploits/
+        url: https://vickieli.dev/blog/insecure%20deserialization/unserialize-exploits/
       - title: "PHP Type Juggling"
-        url: https://vkili.github.io/blog/insecure%20deserialization/php-type-juggling/
+        url: https://vickieli.dev/blog/insecure%20deserialization/php-type-juggling/
       - title: "PHP Magic Methods"
-        url: https://vkili.github.io/blog/insecure%20deserialization/magic-methods/
+        url: https://vickieli.dev/blog/insecure%20deserialization/magic-methods/
       - title: "PHP Phar Deserialization"
-        url: https://vkili.github.io/blog/insecure%20deserialization/php-phar/
+        url: https://vickieli.dev/blog/insecure%20deserialization/php-phar/

@@ -5,7 +5,7 @@ categories:
 
 And how attackers can bypass DEP to achieve code execution.
 
-Hey, y'all! Welcome back to the binary exploitation series. So far, we've delved into some exploitation techniques such as [buffer overflow](https://vickieli.dev/blog/binary%20exploitation/buffer-overflow/), [buffer overread](https://vickieli.dev/blog/binary%20exploitation/buffer-overread/), and [format string attacks](https://vickieli.dev/blog/binary%20exploitation/format-string-vulnerabilities/).
+Hey, y'all! Welcome back to the binary exploitation series. So far, we've delved into some exploitation techniques such as [buffer overflow](https://vickieli.dev/binary%20exploitation/buffer-overflow/), [buffer overread](https://vickieli.dev/binary%20exploitation/buffer-overread/), and [format string attacks](https://vickieli.dev/binary%20exploitation/format-string-vulnerabilities/).
 
 Today, we are going to take a look at one of the security features commonly built into operating systems that are meant to mitigate these attacks, and how they can be bypassed.
 
@@ -13,7 +13,7 @@ Today, we are going to take a look at one of the security features commonly buil
 
 As mention in previous articles, memory corruption bugs can lead to attackers injecting and executing their own code. These attacks rely on parts of the memory being both writable and executable. (So that the attacker can write their code into the memory region, and subsequently execute that code.) If there are no memory regions that satisfy these two conditions, this type of attack would fail.
 
-![](https://vickieli.dev/blog/assets/images/binary-14.png)
+![](https://vickieli.dev/assets/images/binary-14.png)
 
 ### Protecting the system by rejecting code execution
 
@@ -29,7 +29,7 @@ Return Oriented Programming is an exploit technique that allows attackers to exe
 
 In ROP, the entry point of the attack is still some form of memory corruption: the attacker would need a way to hijack the program control flow. The attacker can then continue to redirect the program flow to use snippets of code already in the codebase (called "gadgets"). Chaining these gadgets together, the attacker can pretty much replicate the effects of custom shellcode.
 
-![](https://vickieli.dev/blog/assets/images/binary-15.png)
+![](https://vickieli.dev/assets/images/binary-15.png)
 
 Each gadget executes a small part of the computation desired by the attacker, such as adding to a register or writing it into a register.
 

@@ -6,7 +6,7 @@ categories:
 
 There's always more to do...
 
-![](https://vickieli.dev/blog/assets/images/ssrf-07.png)
+![](https://vickieli.dev/assets/images/ssrf-07.png)
 
 Ok. So you've found a feature on a web application that fetches external resources. You're able to pull content from all sorts of external sites and there doesn't seem to be any restrictions on the file type that you can request... The application displays everything right back at you. Everything on this endpoint is screaming at you, that it is ripe for SSRF! So you start typing in the magic digits: 127.0.0.1. But a mere second later, the server comes back with an unexpected response:
 
@@ -31,7 +31,7 @@ If you could find an open redirect, you can request a whitelisted URL that redir
 
 If the whitelist is not correctly implemented (eg. via poorly designed regex), it could also be bypassed by using making a subdomain or directory as the whitelisted domain name (eg. *victim.com.attacker.com* or *attacker.com/victim.com*).
 
-![](https://vickieli.dev/blog/assets/images/ssrf-08.png)
+![](https://vickieli.dev/assets/images/ssrf-08.png)
 
 ## Bypassing Blacklists
 

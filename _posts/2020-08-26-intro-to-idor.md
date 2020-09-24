@@ -6,7 +6,7 @@ categories:
 
 And how to cause a massive data breach.
 
-![](https://vickieli.dev/blog/assets/images/idor-01.png)
+![](https://vickieli.dev/assets/images/idor-01.png)
 
 *Hey: Please remember that trying this on systems where you don't have permission to test is illegal. If you've found a vulnerability, please disclose it responsibly to the vendor. Help make our Internet a safer place :)*
 
@@ -32,7 +32,7 @@ https://socialmedia.com/messages?user_id=1233
 
 You notice that you can now see all the private messages between another user (Whose user ID is 1233) and all his friends. Woah. What just happened? At this point, you have found an IDOR vulnerability.
 
-![](https://vickieli.dev/blog/assets/images/idor-02.png)
+![](https://vickieli.dev/assets/images/idor-02.png)
 
 ## How IDORs work.
 

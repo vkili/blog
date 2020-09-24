@@ -7,7 +7,7 @@ And how the Heartbleed bug works!
 
 Welcome back to the binary exploitation series! This is the series where we learn about binary exploitation, the theory underlying binary exploitation techniques, and the defense mechanisms developed against them.
 
-Today, let's talk about a class of vulnerabilities that is quite similar to buffer overflows: buffer overreads. By the way, be sure to familiarize yourself about buffer overflows [here](https://vickieli.dev/blog/binary%20exploitation/buffer-overflow/).
+Today, let's talk about a class of vulnerabilities that is quite similar to buffer overflows: buffer overreads. By the way, be sure to familiarize yourself about buffer overflows [here](https://vickieli.dev/binary%20exploitation/buffer-overflow/).
 
 ## What is a buffer overread?
 

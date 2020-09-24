@@ -32,7 +32,7 @@ We'll dive into allowed_classes further, but essentially, when unserialize() e
 
 ### How it works
 
-![](https://vickieli.dev/blog/assets/images/serialize-07.png)
+![](https://vickieli.dev/assets/images/serialize-07.png)
 
 #### Step 0: What are PHP magic methods?
 
@@ -112,7 +112,7 @@ In this case, passing the above-generated string into the data cookie will cau
 
 There are a few conditions that have to be met for this to be exploitable. Let's look at this chart again, as it points to important exploit prerequisites:
 
-![](https://vickieli.dev/blog/assets/images/serialize-07.png)
+![](https://vickieli.dev/assets/images/serialize-07.png)
 
 In order for an attacker to exploit an insecure unserialize() function, two conditions must be met:
 

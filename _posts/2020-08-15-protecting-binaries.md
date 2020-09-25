@@ -1,6 +1,7 @@
 ---
 categories:
   - Binary Exploitation
+  - Security
 ---
 
 How modern binaries protect against attacks and how these protections are bypassed.

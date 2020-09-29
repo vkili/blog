@@ -117,7 +117,7 @@ The script goes into `directory1` and changes the owner of every file to the r
 chown root a.txt b.txt c.txt
 ```
 
-But the command chown has a flag called `--- reference`, which tells chown to change the owner of the files to the owner of the reference file instead. So this command would change the owner of all files to the user "vickie" instead.
+But the command chown has a flag called `--reference`, which tells chown to change the owner of the files to the owner of the reference file instead. So this command would change the owner of all files to the user "vickie" instead.
 
 ```bash
 chown root a.txt b.txt c.txt --reference=file_owned_by_vickie.txt
@@ -125,15 +125,15 @@ chown root a.txt b.txt c.txt --reference=file_owned_by_vickie.txt
 
 So how can a hacker exploit this situation?
 
-First, she can create a file in `directory1` using her own user account, called `file_owned_by_vickie.txt`. Then, she can create another file in `directory1` called `--- reference=file_owned_by_vickie.txt`.
+First, she can create a file in `directory1` using her own user account, called `file_owned_by_vickie.txt`. Then, she can create another file in `directory1` called `--reference=file_owned_by_vickie.txt`.
 
-Finally, when the script gets executed, the wildcard will notice that the directory contains five files: `a.txt`, `b.txt`, `c.txt`, `--- reference=file_owned_by_vickie.txt` and `file_owned_by_vickie.txt`. It will expand the command into this one:
+Finally, when the script gets executed, the wildcard will notice that the directory contains five files: `a.txt`, `b.txt`, `c.txt`, `--reference=file_owned_by_vickie.txt` and `file_owned_by_vickie.txt`. It will expand the command into this one:
 
 ```bash
 chown root a.txt b.txt c.txt --reference=file_owned_by_vickie.txt file_owned_by_vickie.txt
 ```
 
-Our `--- reference` flag was injected and thus, the owner of the `file_owned_by_vickie.txt` file now owns all files in `directory1`.
+Our `--reference` flag was injected and thus, the owner of the `file_owned_by_vickie.txt` file now owns all files in `directory1`.
 
 Normally, chown is executable only by a superuser, but running it through Cron as the root account gives attackers the opportunity to exploit the wildcard injection vulnerability.
 

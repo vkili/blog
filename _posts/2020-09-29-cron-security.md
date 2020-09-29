@@ -108,7 +108,8 @@ For example, let's say that the system-wide crontab runs a script that contains 
 A wildcard injection vulnerability happens when a program uses the wildcard (\*) character in an insecure way. This allows attackers to change the command's behavior by injecting command flags. In this case, the vulnerability occurs within these lines in the script:
 
 ```bash
-cd directory1chown root *
+cd directory1
+chown root *
 ```
 
 The script goes into `directory1` and changes the owner of every file to the root user. If the directory contains the files `a.txt`, `b.txt`, and `c.txt`, the second command would expand into the following, due to the wildcard.

@@ -107,6 +107,5 @@ msf exploit(linux/http/librenms_collectd_cmd_inject) > exploit
 ```
 
 ## Conclusion
-==========
 
 Today, we covered the very basics of using Metasploit. Metasploit is a feature-rich framework and has a lot more to explore. But by learning how to configure and run an exploit, you now have the basic skills to start utilizing this powerful tool!

@@ -15,7 +15,8 @@ Apache is a web server software available on Linux systems. It is one of the mos
 First of all, if you don't already have Apache on your machine, you'll have to install it! To install apache2 on a Linux machine, run these two commands:
 
 ```bash
-sudo apt updatesudo apt install apache2
+sudo apt update
+sudo apt install apache2
 ```
 
 This will automatically install all the required packages for you. And if you didn't run into any errors, your server should be ready! You can test out your web server by browsing to http://localhost or http://your_ip_address]. You should see a page like this.
@@ -60,7 +61,8 @@ Where YOUR_DOMAIN is the name of your site's virtual host configuration file, mi
 To start or stop your Apache server, you can run:
 
 ```bash
-sudo systemctl start apache2sudo systemctl stop apache2
+sudo systemctl start apache2
+sudo systemctl stop apache2
 ```
 
 You can also restart your server in one command using:
@@ -136,7 +138,8 @@ sudo a2dissite 000-default.conf
 Finally, check for configuration errors and reload Apache to finalize your changes.
 
 ```bash
-sudo apache2ctl configtestsudo systemctl reload apache2
+sudo apache2ctl configtest
+sudo systemctl reload apache2
 ```
 
 Hurray! Now when you browse to http://YOUR_DOMAIN, you should see an HTML page that says:

@@ -138,6 +138,4 @@ You can find [more useful display filters](https://wiki.wireshark.org/DisplayFi
 
 Thanks for reading! This article only introduces a small fraction of what you can do with Wireshark. It is a versatile tool that is capable of performing many different types of analysis.
 
-If you are interested in learning more about Wireshark, visit its documentation below:
-
-[Wireshark Wiki](https://wiki.wireshark.org/)
+If you are interested in learning more about Wireshark, visit its documentation here: [Wireshark Wiki](https://wiki.wireshark.org/).

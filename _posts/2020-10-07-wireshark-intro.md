@@ -71,7 +71,6 @@ You can also specify capture filters and capture commands. Be sure to check th
 ![](https://vickieli.dev/assets/images/hacking-16.png)
 
 ## Capture Filters
-===============
 
 You can use Wireshark's capture filters to reduce the size of your capture files. Capture filters enable you to leave out packets that you are not interested in during a capture. In Wireshark's startup window, you can see the capture filter above the interfaces list:
 

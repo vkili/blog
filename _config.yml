@@ -99,9 +99,9 @@ author:
   # location         : "Somewhere"
   email            :
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+    - label: "Youtube"
+      icon: "fab fa-youtube"
+      url: "https://www.youtube.com/channel/UCjQHiY2JeOkBamHSg_6UeFw"
     - label: "Medium"
       icon: "fab fa-medium"
       url: "https://medium.com/@vickieli"

@@ -99,7 +99,7 @@ author:
   # location         : "Somewhere"
   email            :
   links:
-    - label: "Youtube"
+    - label: "YouTube"
       icon: "fab fa-youtube"
       url: "https://www.youtube.com/channel/UCjQHiY2JeOkBamHSg_6UeFw"
     - label: "Medium"

@@ -4,7 +4,7 @@ categories:
   - Hacking
 ---
 
-Using ProxyChains to Proxy Your Internet Traffic.
+Using ProxyChains to proxy your Internet traffic.
 
 How do hackers cover their tracks during a cyber attack? Today, let's talk about an important concept for penetration testers and forensics investigators: proxying.
 

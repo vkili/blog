@@ -267,7 +267,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-classes: wide
 
 # Defaults
 defaults:
@@ -277,6 +276,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide
       # read_time: true
       # comments: # true
       # share: true
@@ -287,6 +287,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide
       # read_time: true
       # comments: # true
       # share: true
@@ -304,3 +305,4 @@ defaults:
         nav: "posts"
       related: true
       comments: true
+      classes: wide

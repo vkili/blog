@@ -10,13 +10,13 @@ Hello! And welcome to this blog post!
 
 I'm excited to say that today, we are going to dive into the first vulnerability type that I learned about when I started in web hacking: CSRF, or Cross-Site Request Forgery.
 
-## What is CSRF?
+## What Is CSRF?
 
 CSRF, or Cross-Site Request Forgery, is a technique that allows hackers to carry out unwanted actions on a victim's behalf. Think: a hacker changing your password or transferring money from your bank account without your permission.
 
 Sounds crazy and pretty cool already! But how is this attack possible? Before we dive into the mechanisms of a CSRF attack, we need to understand how websites authenticate their users.
 
-## How does Twitter know it's me?
+## How Does Twitter Know It's Me?
 
 Have you ever wondered: How do websites recognize me? Why is it that I don't need to log into Twitter every time I check my feed? When I Tweet something, how does Twitter know it's me without having to ask me for my password again?
 
@@ -35,11 +35,11 @@ Let's say the "Send a Tweet" HTML form looks like this: (This is not the actual 
 </form>
 ```
 
-Once you click on "Submit" on the page, your browser will send a request to https://twitter.com/send_a_tweet with your session cookie, and a tweet would be sent on your behalf. Now, can you spot the issue with this functionality?
+Once you click on "Submit" on the page, your browser will send a request to `https://twitter.com/send_a_tweet` with your session cookie, and a tweet would be sent on your behalf. Now, can you spot the issue with this functionality?
 
-## How it all goes wrong...
+## How It All Goes Wrong...
 
-A simple HTML form like the above is vulnerable because any site can submit that same request, not just twitter.com.
+A simple HTML form like the above is vulnerable because any site can submit that same request, not just `twitter.com`.
 
 Imagine an attacker hosting her own website, and on her site, she hosts an auto-submitted and invisible HTML form like this:
 
@@ -50,9 +50,9 @@ Imagine an attacker hosting her own website, and on her site, she hosts an auto
 </form>
 ```
 
-Since browsers include session cookies automatically with each request, and this request is going to twitter.com, the browser will include your Twitter credentials when this form is automatically submitted.
+Since browsers include session cookies automatically with each request, and this request is going to `twitter.com`, the browser will include your Twitter credentials when this form is automatically submitted.
 
-Twitter will then see the request as valid since it included your real Twitter credentials. The Tweet will go through and you would have been forced to tweet: Follow @vickieli7 on Twitter! whenever you visit the malicious page.
+Twitter will then see the request as valid since it included your real Twitter credentials. The Tweet will go through and you would have been forced to tweet: "Follow @vickieli7 on Twitter!" whenever you visit the malicious page.
 
 Realistically, a malicious HTML page would look like this: The form is hidden from user view and Javascript is used to submit the form without the need for user interaction.
 
@@ -65,7 +65,7 @@ Realistically, a malicious HTML page would look like this: The form is hidden fr
 <script>document.getElementById("csrf-form").submit()</script>
 ```
 
-## How to protect yourself against CSRF attacks
+## How To Protect Yourself Against CSRF Attacks
 
 Unfortunately, CSRF vulnerabilities are still extremely common in the wild. Websites of major corporations like Starbucks and Uber have all been found vulnerable to the attack. While developers can do their best to protect their websites, we as users can also take action to minimize the risk of a CSRF attack.
 

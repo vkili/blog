@@ -87,6 +87,6 @@ And you can add the sticky bit to a file or directory by using this command.
 
 ```bash
 chmod +t filepath
-```s
+```
 
 I hope this helps you understand more clearly how Linux permissions are managed. Next time, we'll dive into some privilege escalation techniques that allow attackers to access or execute files despite not having permission. See you next time!

@@ -18,14 +18,14 @@ There are three types of permissions: *read*, *write*, and *execute*. A *rea
 
 You can view the permissions of a file or directory by using the `ls -l` command in a directory. You should see a line like this.
 
-```bash
+```
 -rwxrwxrwx
 drwxrwxrwx
 ```
 
 The first character indicates whether the item is a file or a directory. A dash means that the item is a file, whereas a *d* means it's a directory. The next three characters are the permissions of the file's owner. The owner is usually the user who created the file and has the most control over it. *R* indicates *read*, *w* indicates *write*, and *X* indicates *eXecute*. And a dash indicates the lack of that permission. Let's look at an example. Here, the owner can read, write, and execute the file.
 
-```bash
+```
 -rwxr--r--
 ```
 
@@ -55,7 +55,7 @@ There are also a few special things you can do with a file's permissions.
 
 The first thing you can do is set the setUID, or SUID bit. When the `SUID` bit is set, the file will always run as the user who owns the file and not as the user who started the program. For example, if an executable is owned by root, then the file will always run as the root user, regardless of who started the execution. You can tell if a file has SUID permissions if there is an *s* character instead of an *x* or a dash in the owner's permissions.
 
-```bash
+```
 -rwsrwxrwx
 ```
 
@@ -67,7 +67,7 @@ chmod u+s filepath
 
 SetGID, or SGID, works similarly to SUID. When the setGID bit is set on a file, all users can execute the file with the owner group's permissions. And if SGID is set on a directory, all the files created in that directory become accessible to all users in the parent directory's owner group. You can tell if a file or directory has SGID permissions if there is an *s* character instead of an *x* or a dash in the owner group's permissions.
 
-```bash
+```
 -rwxrwsrwx
 ```
 
@@ -79,7 +79,7 @@ chmod g+s filepath
 
 There is also something called the *sticky bit* in a file's permissions. If the sticky bit is set on a regular file, it makes subsequent execution of the program faster. However, the sticky bit is more commonly used on directories. It would mean the files or directories within that directory can only be moved or deleted by the file or directory's owner or the superuser. This is commonly used for the temp directory (`/tmp`), which is designed to store temporary files created by individual users. You can tell if a file or directory has the sticky bit set by seeing if there is a *t* character instead of an *x* or a dash in the permissions string's last character.
 
-```bash
+```
 -rwxrwxrwt
 ```
 

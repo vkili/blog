@@ -4,7 +4,7 @@ categories:
   - System Security
 ---
 
-Linux Privilege Escalation By Exploiting The SUID Bit.
+Linux privilege escalation by exploiting the SUID bit.
 
 Welcome back to the Linux Security Series! In this series, we'll discuss security issues that affect Linux systems and common misconfigurations that lead to them. Let's get started!
 

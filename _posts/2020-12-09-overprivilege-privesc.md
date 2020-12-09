@@ -28,8 +28,8 @@ The application's PHP source code looks like this. The application retrieves the
 
 ```php
 <?php 
-	$file=$_GET['filename']; 
-	system("echo $file");
+  $file=$_GET['filename']; 
+  system("echo $file");
 ?>
 ```
 
@@ -47,7 +47,8 @@ echo abc.txt;ls
 
 But what if the web application has root privileges? Then the attacker can do a lot worse because the injected command will also run under root privileges. For example, the attacker can use the command injection to add themselves as a root user by editing the `/etc/passwd` file:
 
-```https://example.com/read?filename=abc.txt;echo+"vickie::0:0:System Administrator:/root/root:/bin/bash">> /etc/passwd
+```
+https://example.com/read?filename=abc.txt;echo+"vickie::0:0:System Administrator:/root/root:/bin/bash">> /etc/passwd
 ```
 
 This command adds a new root user to the `/etc/passwd` file:

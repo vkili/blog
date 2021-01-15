@@ -4,7 +4,9 @@ categories:
   - Development
 ---
 
-Most of you know me as an offensive security gal. The fact that I decided to join a SAST team frankly surprised me as well. Now that I have officially started my job at [ShiftLeft](https://www.shiftleft.io/), I am taking this moment to reflect on how I got here and how I see the future of application security.
+Most of you know me as an offensive security gal. The fact that I decided to join a SAST team frankly surprised me as well. 
+
+Now that I have officially started my job at [ShiftLeft](https://www.shiftleft.io/), I am taking this moment to reflect on how I got here and how I see the future of application security.
 
 ![](https://vickieli.dev/assets/images/shiftleft-01.png)
 

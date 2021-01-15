@@ -39,4 +39,4 @@ Here are some challenges I see ahead and what I hope to help solve by teaming up
 -   How do we make it easier for developers to integrate security into their workflow?
 -   And above all, how do we make developing secure software easier for our fellow developers?
 
-What is the most challenging part of developing secure software for you? I'd love to know. Feel free to connect on Twitter @vickieli7.
+What is the most challenging part of developing secure software for you? I'd love to know. Feel free to connect on Twitter [@vickieli7](https://twitter.com/vickieli7).

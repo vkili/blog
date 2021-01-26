@@ -4,7 +4,7 @@ categories:
   - Development
 ---
 
-And why Application Security is like wearing masks
+And why Application Security is like wearing masks.
 
 Wearing a face mask to prevent coronavirus is becoming the norm in my city. It was hit heavily by the COVID crisis, and now we have reached an unspoken consensus: wear masks, wherever you go.
 

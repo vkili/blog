@@ -33,6 +33,7 @@ First, check the organization of your article. Does the article say everything y
 Most of the time, editing cuts the word count of my first draft down significantly. That’s a good thing! It means that the article is becoming more precise, direct, and clear.
 
 - What about writer’s block?
+
 But what about writer’s block? One of the issues you might encounter when writing is simply coming up with the next sentence, paragraph, and so on.
 
 If you already have a topic in mind, a good way to combat writer's block is to start with an outline. Create an outline, layout the headings and subheadings, then fill out each section. This will help you stick to a clear article structure as well.

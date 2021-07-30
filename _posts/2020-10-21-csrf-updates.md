@@ -60,6 +60,6 @@ Host: email.example.com
 Cookie: session_cookie=YOUR_SESSION_COOKIE
 ```
 
-Another scenario is when sites manually set the `SameSite` attribute of a cookie to `None`. Some web applications have features that require third-party sites to send cross-site, authenticated requests. In that case, developers might explicitly set `SameSite` on a session cookie to `None`. When the `SameSite` attribute is set to `None`, sending the cookie cross-origin is allowed, so traditional CSRF attacks would still work.
+Another scenario is when sites manually set the `SameSite` attribute of a cookie to `None`. Some web applications have features that require third-party sites to send cross-site, authenticated requests. In that case, developers might explicitly set `SameSite` on a session cookie to `None`. When the `SameSite` attribute is set to `None`, sending the cookie cross-site is allowed, so traditional CSRF attacks would still work.
 
 Finally, if the victim is using a browser that does not set the `SameSite` attribute to `Lax` by default (like IE and Safari), traditional CSRF attacks would still work if the target application does not implement diligent CSRF protection.

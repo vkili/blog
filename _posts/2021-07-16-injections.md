@@ -23,7 +23,7 @@ In a SQL injection attack, for example, the attacker injects data to manipulate 
 
 Also, it’s important to remember that this manipulation can happen any time this piece of data is being processed or used. Even if the malicious user data is not used by the application right away, the untrusted data can eventually travel somewhere in the program where it can do something bad, such as a dangerous function or an unprotected query. And this is where they cause damage to the application, its data, or its users.
 
-##Preventing injection vulnerabilities
+## Preventing injection vulnerabilities
 
 That’s why injections are so difficult to prevent. Untrusted data can attack any application component that it touches down the stream. And for every piece of untrusted data the application receives, it needs to detect and neutralize attacks targeting every part of the application. And application might think a piece of data is safe because it does not contain any special characters used for triggering XSS when the attacker intends to trigger an SQL injection instead. It’s not always straightforward to determine what data is safe and data is not, because safe and unsafe data looks very different in different parts of the application.
 

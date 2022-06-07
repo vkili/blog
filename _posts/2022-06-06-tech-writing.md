@@ -70,6 +70,6 @@ When you first start, don’t be discouraged when your grammar checker finds hun
 
 Finally, read your article out loud for a final check. Reading an article out loud is the ultimate check to see if your article is easy to read and often uncovers those last inconsistencies and mistakes.
 
-Thanks for reading! Connect with me at https://twitter.com/vickieli7.
+Thanks for reading! Connect with me on [Twitter](https://twitter.com/vickieli7).
 
-You can find my book, Bug Bounty Bootcamp, at https://nostarch.com/bug-bounty-bootcamp.
+You can find my book, Bug Bounty Bootcamp, at [Bug Bounty Bootcamp](https://nostarch.com/bug-bounty-bootcamp).

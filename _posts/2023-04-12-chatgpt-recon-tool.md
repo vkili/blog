@@ -17,12 +17,12 @@ Let's see what it comes up with! :)
 I started by describing the simple tool we built in Chapter 5 of Bug Bounty Bootcamp to ChatGPT:
 
 ```
-Please write a bash script that will:\
---- Look for open ports\
---- Look for subdomains\
---- Look for file paths\
-On a target domain, and store the scan results to file.\
-The script should be able to scan multiple domains at once,\
+Please write a bash script that will:
+--- Look for open ports
+--- Look for subdomains
+--- Look for file paths
+On a target domain, and store the scan results to file.
+The script should be able to scan multiple domains at once,
 and produce human-readable report files.
 ```
 
@@ -31,26 +31,26 @@ Seems like a fairly simple prompt, here's what ChatGPT came back with:
 ```bash
 #!/bin/bash
 
-# Set the target domains as an array\
+# Set the target domains as an array
 domains=("example.com" "test.com")
 
-# Define the output directory\
+# Define the output directory
 output_dir="./scan_results"
 
-# Loop through the target domains\
-for domain in "${domains[@]}"\
-do\
-    # Create a directory for the current domain's results\
+# Loop through the target domains
+for domain in "${domains[@]}"
+do
+    # Create a directory for the current domain's results
     mkdir -p "$output_dir/$domain"
 
-    # Run the nmap command to scan for open ports\
+    # Run the nmap command to scan for open ports
     nmap -v -oN "$output_dir/$domain/open_ports.txt" "$domain"
 
-    # Run the sublist3r command to scan for subdomains\
+    # Run the sublist3r command to scan for subdomains
     sublist3r -d "$domain" -o "$output_dir/$domain/subdomains.txt"
 
-    # Use Gobuster to scan for file paths\
-    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k\
+    # Use Gobuster to scan for file paths
+    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k
 done
 ```
 
@@ -59,9 +59,9 @@ This generated script scans the target domains for open ports, subdomains, and f
 ChatGPT recommended using `Nmap`, `Sublist3r`, and `Gobuster` for the scan. It also provided the instructions for using the tool:
 
 ```
-To use this script, save it to a file (e.g., scan_domains.sh),\
-make it executable (chmod +x scan_domains.sh), and run it (./scan_domains.sh).\
-Make sure to install the required tools (nmap, sublist3r, and gobuster)\
+To use this script, save it to a file (e.g., scan_domains.sh),
+make it executable (chmod +x scan_domains.sh), and run it (./scan_domains.sh).
+Make sure to install the required tools (nmap, sublist3r, and gobuster)
 before running the script.
 ```
 
@@ -76,43 +76,43 @@ This newly generated script prompts the user for the target domains and scan typ
 ```bash
 #!/bin/bash
 
-# Define the output directory\
+# Define the output directory
 output_dir="./scan_results"
 
-# Prompt the user for the target domain(s)\
+# Prompt the user for the target domain(s)
 read -p "Enter the target domain(s) (comma-separated): " domain_list
 
-# Convert the comma-separated list to an array\
+# Convert the comma-separated list to an array
 IFS=',' read -ra domains <<< "$domain_list"
 
-# Prompt the user for the scan type(s)\
-read -p "Do you want to scan for open ports? [y/n]: " scan_ports\
-read -p "Do you want to scan for subdomains? [y/n]: " scan_subdomains\
+# Prompt the user for the scan type(s)
+read -p "Do you want to scan for open ports? [y/n]: " scan_ports
+read -p "Do you want to scan for subdomains? [y/n]: " scan_subdomains
 read -p "Do you want to scan for file paths? [y/n]: " scan_paths
 
-# Loop through the target domains\
-for domain in "${domains[@]}"\
-do\
-    # Create a directory for the current domain's results\
+# Loop through the target domains
+for domain in "${domains[@]}"
+do
+    # Create a directory for the current domain's results
     mkdir -p "$output_dir/$domain"
 
-    # Scan for open ports if requested\
-    if [[ $scan_ports == "y" ]]\
-    then\
-        nmap -v -oN "$output_dir/$domain/open_ports.txt" "$domain"\
+    # Scan for open ports if requested
+    if [[ $scan_ports == "y" ]]
+    then
+        nmap -v -oN "$output_dir/$domain/open_ports.txt" "$domain"
     fi
 
-    # Scan for subdomains if requested\
-    if [[ $scan_subdomains == "y" ]]\
-    then\
-        sublist3r -d "$domain" -o "$output_dir/$domain/subdomains.txt"\
+    # Scan for subdomains if requested
+    if [[ $scan_subdomains == "y" ]]
+    then
+        sublist3r -d "$domain" -o "$output_dir/$domain/subdomains.txt"
     fi
 
-    # Scan for file paths if requested\
-    if [[ $scan_paths == "y" ]]\
-    then\
-        gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k\
-    fi\
+    # Scan for file paths if requested
+    if [[ $scan_paths == "y" ]]
+    then
+        gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k
+    fi
 done
 ```
 
@@ -121,7 +121,7 @@ done
 Finally, I asked ChatGPT to change the tool so that it would automatically run every night, and notify me of new findings.
 
 ```
-Schedule the script to run everyday at midnight,\
+Schedule the script to run everyday at midnight,
 and notify me if it found anything different from the previous scan.
 ```
 
@@ -130,38 +130,38 @@ Here's the final version of the tool. The script compares the new scan results w
 ```bash
 #!/bin/bash
 
-# Define the output directory\
+# Define the output directory
 output_dir="./scan_results"
 
-# Prompt the user for the target domain(s)\
+# Prompt the user for the target domain(s)
 read -p "Enter the target domain(s) (comma-separated): " domain_list
 
-# Convert the comma-separated list to an array\
+# Convert the comma-separated list to an array
 IFS=',' read -ra domains <<< "$domain_list"
 
-# Loop through the target domains\
-for domain in "${domains[@]}"\
-do\
-    # Create a directory for the current domain's results\
+# Loop through the target domains
+for domain in "${domains[@]}"
+do
+    # Create a directory for the current domain's results
     mkdir -p "$output_dir/$domain"
 
-    # Scan for open ports\
+    # Scan for open ports
     nmap -v -oN "$output_dir/$domain/open_ports.txt" "$domain"
 
-    # Scan for subdomains\
+    # Scan for subdomains
     sublist3r -d "$domain" -o "$output_dir/$domain/subdomains.txt"
 
-    # Scan for file paths\
-    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k\
+    # Scan for file paths
+    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k
 done
 
 
-# Compare the new scan results with the previous ones and send an email if there are any differences\
+# Compare the new scan results with the previous ones and send an email if there are any differences
 changes=$(git --git-dir="$output_dir/.git" --work-tree="$output_dir" diff HEAD~1 HEAD)
 
-if [[ -n $changes ]]\
-then\
-    echo "$changes" | mail -s "Scan results for $domain have changed" youremail@example.com\
+if [[ -n $changes ]]
+then
+    echo "$changes" | mail -s "Scan results for $domain have changed" youremail@example.com
 fi
 ```
 
@@ -176,34 +176,34 @@ However, this script is not really usable since it's supposed to run without hum
 ```bash
 #!/bin/bash
 
-# Define the target domains\
+# Define the target domains
 domains=("example.com" "test.com" "example.org")
 
-# Define the output directory\
+# Define the output directory
 output_dir="./scan_results"
 
-# Loop through the target domains\
-for domain in "${domains[@]}"\
-do\
-    # Create a directory for the current domain's results\
+# Loop through the target domains
+for domain in "${domains[@]}"
+do
+    # Create a directory for the current domain's results
     mkdir -p "$output_dir/$domain"
 
-    # Scan for open ports\
+    # Scan for open ports
     nmap -v -oN "$output_dir/$domain/open_ports.txt" "$domain"
 
-    # Scan for subdomains\
+    # Scan for subdomains
     sublist3r -d "$domain" -o "$output_dir/$domain/subdomains.txt"
 
-    # Scan for file paths\
-    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k\
+    # Scan for file paths
+    gobuster dir -u "https://$domain" -w /usr/share/wordlists/dirb/common.txt -o "$output_dir/$domain/file_paths.txt" -k
 done
 
-# Compare the new scan results with the previous ones and send an email if there are any differences\
+# Compare the new scan results with the previous ones and send an email if there are any differences
 changes=$(git --git-dir="$output_dir/.git" --work-tree="$output_dir" diff HEAD~1 HEAD)
 
-if [[ -n $changes ]]\
-then\
-    echo "$changes" | mail -s "Scan results have changed" youremail@example.com\
+if [[ -n $changes ]]
+then
+    echo "$changes" | mail -s "Scan results have changed" youremail@example.com
 fi
 ```
 

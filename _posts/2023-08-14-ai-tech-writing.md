@@ -4,7 +4,7 @@ categories:
   - AI
 ---
 
-Tech Writing vs GPT
+Is AI replacing technical writers and developer advocates?
 
 I recently stumbled on a Twitter discussion debating whether the role of developer relations (DevRel) / developer advocates would become obsolete due to generative AI, such as GPT.
 
@@ -22,9 +22,9 @@ The post should include different types of XSS,\
 
 ChatGPT generated this article. (Feel free to skim and skip forward to my commentary below.)
 
-## <Start ChatGPT Article>
+> Start ChatGPT Article
 
-> Protect Your Web Application: Understanding and Preventing Cross-Site Scripting (XSS) Vulnerabilities
+```Protect Your Web Application: Understanding and Preventing Cross-Site Scripting (XSS) Vulnerabilities```
 
 *Introduction*
 
@@ -86,7 +86,7 @@ document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");
 
 *XSS vulnerabilities are a serious threat to the security of web applications, but by following best practices for writing XSS-safe code and using available tools, we can prevent them from being exploited. Remember to always validate and sanitize user input, encode output, and use secure cookies to protect your web application from XSS attacks.*
 
-## <End ChatGPT Article>
+> End ChatGPT Article
 
 Initially, the article looks solid. It covers a lot of topics related to XSS that readers may find useful. However, I can't say that ChatGPT is a great technical writer. It missed out on a lot of things that make tutorials or documentation helpful.
 

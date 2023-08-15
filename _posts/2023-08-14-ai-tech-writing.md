@@ -53,28 +53,32 @@ ChatGPT generated this article. (Feel free to skim and skip forward to my commen
 *Vulnerable Code:*
 
 ```
-document.write("<h1>Welcome, " + username + "!</h1>");```
+document.write("<h1>Welcome, " + username + "!</h1>");
+```
 
 *This code is vulnerable to Reflected XSS attacks because the variable *`*username*`* is not sanitized.*
 
 *Fixed Code:*
 
 ```
-document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");```
+document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");
+```
 
 *The *`*escapeHTML()*`* function will encode special characters in the *`*username*`* variable to prevent XSS attacks.*
 
 *Vulnerable Code:*
 
 ```
-<input type="text" value="<%= user.name %>">```
+<input type="text" value="<%= user.name %>">
+```
 
 *This code is vulnerable to Stored XSS attacks because the *`*user.name*`* variable is not sanitized.*
 
 *Fixed Code:*
 
 ```
-<input type="text" value="<%= escapeHTML(user.name) %>">```
+<input type="text" value="<%= escapeHTML(user.name) %>">
+```
 
 *Using the *`*escapeHTML()*`* function will encode special characters in the *`*user.name*`* variable to prevent XSS attacks.*
 
@@ -118,5 +122,6 @@ ChatGPT could make writers more efficient by helping them create outlines and in
 
 Nonetheless, it's likely that its writing abilities will improve in the near future. For now, I'll just use GPT as a writing and research assistant.
 
+Want to connect? What other security concepts do you want to learn about? I'd love to know. Feel free to connect on Twitter [@vickieli7](https://twitter.com/vickieli7).
+
 *This article was written by a human and copyedited by ChatGPT.* 
-Want to connect? What other security concepts do you want to learn about? I'd love to know. Feel free to connect on Twitter [@vickieli7](https://twitter.com/vickieli7).-

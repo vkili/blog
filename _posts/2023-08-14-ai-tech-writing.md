@@ -64,7 +64,7 @@ document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");
 
 *Vulnerable Code:*
 
-```html
+```
 <input type="text" value="<%= user.name %>">
 ```
 
@@ -72,7 +72,7 @@ document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");
 
 *Fixed Code:*
 
-```html
+```
 <input type="text" value="<%= escapeHTML(user.name) %>">
 ```
 

@@ -64,17 +64,13 @@ document.write("<h1>Welcome, " + escapeHTML(username) + "!</h1>");
 
 *Vulnerable Code:*
 
-```
-<input type="text" value="<%= user.name %>">
-```
+```<input type="text" value="<%= user.name %>">```
 
 *This code is vulnerable to Stored XSS attacks because the *`*user.name*`* variable is not sanitized.*
 
 *Fixed Code:*
 
-```
-<input type="text" value="<%= escapeHTML(user.name) %>">
-```
+```<input type="text" value="<%= escapeHTML(user.name) %>">```
 
 *Using the *`*escapeHTML()*`* function will encode special characters in the *`*user.name*`* variable to prevent XSS attacks.*
 
